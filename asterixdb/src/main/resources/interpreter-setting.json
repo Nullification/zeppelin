@@ -1,0 +1,34 @@
+[
+  {
+    "group": "asterixdb",
+    "name": "asterixdb",
+    "className": "org.apache.zeppelin.asterixdb.AsterixDBInterpreter",
+    "properties": {
+      "asterixdb.host": {
+        "envName": "ASTERIXDB_HOST",
+        "propertyName": "asterixdb.host",
+        "defaultValue": "localhost",
+        "description": "Host for AsterixDB",
+        "type": "string"
+      },
+      "asterixdb.port": {
+        "envName": "ASTERIXDB_PORT",
+        "propertyName": "asterixdb.port",
+        "defaultValue": "19002",
+        "description": "Port for AsterixDB",
+        "type": "number"
+      },
+      "asterixdb.result.size": {
+        "envName": "ASTERIXDB_RESULT_SIZE",
+        "propertyName": "asterixdb.result.size",
+        "defaultValue": "1000",
+        "description": "Maximum size of a query result",
+        "type": "number"
+      }
+    },
+    "editor": {
+      "language": "sql",
+      "editOnDblClick": false
+    }
+  }
+]

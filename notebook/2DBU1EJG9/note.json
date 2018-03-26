@@ -1,0 +1,764 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# Welcom to Apache AsterixDB SQL++ Interpreter Tutorial!\n\nThis tutorial shows how to use Apache AsterixDB SQL++ interpreter.\n\n### Configure AsterixDB Interpreter\nAsterixDB SQL++ Interpreter can be configured in the \u003ca href \u003d\"#/interpreter\"\u003e Interpreters Configuration Page\u003c/a\u003e.\nAs you can see there are 3 key-value pairs to configure the interpreter:\n\n| Key                    | Default Value   | Description                   |\n| -----------------------| :--------------:| :-----------------------------|\n| asterixdb.host         | localhost       | AsterixDB CC address          |\n| asterixdb.port         | 19002           | AsterixDB Query Service port  |\n| asterixdb.result.size  | 1000            | Maxumum result size to render |\n\n### Display System\nThe first two paragraphs shows how AsterixDB Interpreter renders the result:\n- Prettified JSON\n- Flattened (Tabularized) format using ``+flat`` flag.\n",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 15:34:12.454",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eWelcom to Apache AsterixDB SQL++ Interpreter Tutorial!\u003c/h1\u003e\n\u003cp\u003eThis tutorial shows how to use Apache AsterixDB SQL++ interpreter.\u003c/p\u003e\n\u003ch3\u003eConfigure AsterixDB Interpreter\u003c/h3\u003e\n\u003cp\u003eAsterixDB SQL++ Interpreter can be configured in the \u003ca href \u003d\"#/interpreter\"\u003e Interpreters Configuration Page\u003c/a\u003e.\u003cbr/\u003eAs you can see there are 3 key-value pairs to configure the interpreter:\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eKey \u003c/th\u003e\n      \u003cth align\u003d\"center\"\u003eDefault Value \u003c/th\u003e\n      \u003cth align\u003d\"left\"\u003eDescription \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003easterixdb.host \u003c/td\u003e\n      \u003ctd align\u003d\"center\"\u003elocalhost \u003c/td\u003e\n      \u003ctd align\u003d\"left\"\u003eAsterixDB CC address \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003easterixdb.port \u003c/td\u003e\n      \u003ctd align\u003d\"center\"\u003e19002 \u003c/td\u003e\n      \u003ctd align\u003d\"left\"\u003eAsterixDB Query Service port \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003easterixdb.result.size \u003c/td\u003e\n      \u003ctd align\u003d\"center\"\u003e1000 \u003c/td\u003e\n      \u003ctd align\u003d\"left\"\u003eMaxumum result size to render \u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eDisplay System\u003c/h3\u003e\n\u003cp\u003eThe first two paragraphs shows how AsterixDB Interpreter renders the result:\u003cbr/\u003e- Prettified JSON\u003cbr/\u003e- Flattened (Tabularized) format using \u003ccode\u003e+flat\u003c/code\u003e flag.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099263421_728587798",
+      "id": "20180326-142103_1819029504",
+      "dateCreated": "2018-03-26 14:21:03.421",
+      "dateStarted": "2018-03-26 15:34:12.454",
+      "dateFinished": "2018-03-26 15:34:13.882",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "JSON Result",
+      "text": "%asterixdb\n-- Render the result as a prettified JSON format\n\nSELECT *\nFROM [\n    {\n        \"project\" : \"AsterixDB\",\n        \"type\" : \"BDMS\"\n    },\n    {\n        \"project\" : \"Zeppelin\",\n        \"type\" : \"Multi-lingual notebook\"\n    }\n] as data\nWHERE data.`type` \u003d \"BDMS\"",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:17.611",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cscript src\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.js\"\u003e\u003c/script\u003e\n\u003clink href\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.css\" type\u003d\"text/css\" rel\u003d\"stylesheet\" /\u003e\n\u003cscript\u003e$(\u0027#json-renderer20180326-142125_1299578254\u0027).jsonViewer([{\"data\":{\"project\":\"AsterixDB\",\"type\":\"BDMS\"}}]);\u003c/script\u003e\u003c/head\u003e\u003cbody\u003e\u003cpre id\u003d\"json-renderer20180326-142125_1299578254\"\u003e\u003c/pre\u003e\u003c/body\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099285274_-856289799",
+      "id": "20180326-142125_1299578254",
+      "dateCreated": "2018-03-26 14:21:25.274",
+      "dateStarted": "2018-03-26 16:12:17.692",
+      "dateFinished": "2018-03-26 16:12:19.109",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Flat Result",
+      "text": "%asterixdb\n+flat\n-- ^ Means flatten the result data\n-- Flatenning result allow Apache Zeppelin to interpret the data\n-- and visualize the result.\n\nSELECT *\nFROM [\n    {\n        \"project\" : \"AsterixDB\",\n        \"type\" : \"BDMS\"\n    },\n    {\n        \"project\" : \"Zeppelin\",\n        \"type\" : \"Multi-lingual notebook\"\n    }\n] as data\nWHERE data.`type` \u003d \"BDMS\"",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:20.552",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "data.project": "string",
+                      "data.type": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "data.project\tdata.type\nAsterixDB\tBDMS\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099346550_957453021",
+      "id": "20180326-142226_358891123",
+      "dateCreated": "2018-03-26 14:22:26.550",
+      "dateStarted": "2018-03-26 16:12:20.589",
+      "dateFinished": "2018-03-26 16:12:20.628",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLet\u0027s start with SQL++ Primer\n\nFor more information about AsterixDB SQL++ and the queries in this notebook\nplease refer to \u003ca href \u003d \"https://ci.apache.org/projects/asterixdb/sqlpp/primer-sqlpp.html\"\u003e AsterixDB SQL++ Primer \u003c/a\u003e\n\n- First, we will run few DDL statements\n- Create Datasets and indexes\n- Few DML statements to populates our datasets\n- and Query on :-)",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 14:34:03.347",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLet\u0026rsquo;s start with SQL++ Primer\u003c/p\u003e\n\u003cp\u003eFor more information about AsterixDB SQL++ and the queries in this notebook\u003cbr/\u003eplease refer to \u003ca href \u003d \"https://ci.apache.org/projects/asterixdb/sqlpp/primer-sqlpp.html\"\u003e AsterixDB SQL++ Primer \u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eFirst, we will run few DDL statements\u003c/li\u003e\n  \u003cli\u003eCreate Datasets and indexes\u003c/li\u003e\n  \u003cli\u003eFew DML statements to populates our datasets\u003c/li\u003e\n  \u003cli\u003eand Query on :-)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099574100_770181968",
+      "id": "20180326-142614_364970382",
+      "dateCreated": "2018-03-26 14:26:14.101",
+      "dateStarted": "2018-03-26 14:34:03.348",
+      "dateFinished": "2018-03-26 14:34:03.364",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Run DDL Statements",
+      "text": "%asterixdb\n-- Output \"success\" indicates that the DDL statements was successful\n\nDROP DATAVERSE TinySocial IF EXISTS;\nCREATE DATAVERSE TinySocial;\nUSE TinySocial;\n\nCREATE TYPE ChirpUserType AS {\n    screenName: string,\n    lang: string,\n    friendsCount: int,\n    statusesCount: int,\n    name: string,\n    followersCount: int\n};\n\nCREATE TYPE ChirpMessageType AS closed {\n    chirpId: string,\n    user: ChirpUserType,\n    senderLocation: point?,\n    sendTime: datetime,\n    referredTopics: {{ string }},\n    messageText: string\n};\n\nCREATE TYPE EmploymentType AS {\n    organizationName: string,\n    startDate: date,\n    endDate: date?\n};\n\nCREATE TYPE GleambookUserType AS {\n    id: int,\n    alias: string,\n    name: string,\n    userSince: datetime,\n    friendIds: {{ int }},\n    employment: [EmploymentType]\n};\n\nCREATE TYPE GleambookMessageType AS {\n    messageId: int,\n    authorId: int,\n    inResponseTo: int?,\n    senderLocation: point?,\n    message: string\n};",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:23.233",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "success"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099713238_-1425139674",
+      "id": "20180326-142833_583246939",
+      "dateCreated": "2018-03-26 14:28:33.238",
+      "dateStarted": "2018-03-26 16:12:23.267",
+      "dateFinished": "2018-03-26 16:12:23.388",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Error messages",
+      "text": "%asterixdb\nUSE TinySocial;\n\n--In case of an error, a message should should indicate what went wrong\n\nCREATE TYPE GleambookMessageType AS {\n    messageId: int,\n    authorId: int,\n    inResponseTo: int?,\n    senderLocation: point?,\n    message: string\n};",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:24.664",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Error A datatype with this name GleambookMessageType already exists.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100143729_-528131367",
+      "id": "20180326-143543_107424218",
+      "dateCreated": "2018-03-26 14:35:43.729",
+      "dateStarted": "2018-03-26 16:12:24.703",
+      "dateFinished": "2018-03-26 16:12:24.719",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Create Indexes",
+      "text": "%asterixdb\nUSE TinySocial;\n\n-- Lets create some datasets with thier indexes\n\nCREATE DATASET GleambookUsers(GleambookUserType)\n    PRIMARY KEY id;\n\nCREATE DATASET GleambookMessages(GleambookMessageType)\n    PRIMARY KEY messageId;\n\nCREATE DATASET ChirpUsers(ChirpUserType)\n    PRIMARY KEY screenName;\n\nCREATE DATASET ChirpMessages(ChirpMessageType)\n    PRIMARY KEY chirpId\n    hints(cardinality\u003d100);\n\nCREATE INDEX gbUserSinceIdx on GleambookUsers(userSince);\nCREATE INDEX gbAuthorIdx on GleambookMessages(authorId) TYPE btree;\nCREATE INDEX gbSenderLocIndex on GleambookMessages(senderLocation) TYPE rtree;\nCREATE INDEX gbMessageIdx on GleambookMessages(message) TYPE keyword;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:25.792",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "success"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522099794314_361403270",
+      "id": "20180326-142954_1859582692",
+      "dateCreated": "2018-03-26 14:29:54.314",
+      "dateStarted": "2018-03-26 16:12:25.826",
+      "dateFinished": "2018-03-26 16:12:26.062",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Query Metadata",
+      "text": "%asterixdb\n+flat\n-- Let\u0027s query AsterixDB meteadata to see the created datasets and indexes\n\nSELECT VALUE ds \nFROM Metadata.`Dataset` ds",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:27.625",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "CompactionPolicy": "string",
+                      "CompactionPolicyProperties[0].Name": "string",
+                      "CompactionPolicyProperties[0].Value": "string",
+                      "CompactionPolicyProperties[1].Name": "string",
+                      "CompactionPolicyProperties[1].Value": "string",
+                      "DatasetId": "string",
+                      "DatasetName": "string",
+                      "DatasetType": "string",
+                      "DatatypeDataverseName": "string",
+                      "DatatypeName": "string",
+                      "DataverseName": "string",
+                      "GroupName": "string",
+                      "Hints": "string",
+                      "Hints[0].Name": "string",
+                      "Hints[0].Value": "string",
+                      "InternalDetails.Autogenerated": "string",
+                      "InternalDetails.FileStructure": "string",
+                      "InternalDetails.PartitioningKey[0][0]": "string",
+                      "InternalDetails.PartitioningKey[1][0]": "string",
+                      "InternalDetails.PartitioningKey[2][0]": "string",
+                      "InternalDetails.PartitioningStrategy": "string",
+                      "InternalDetails.PrimaryKey[0][0]": "string",
+                      "InternalDetails.PrimaryKey[1][0]": "string",
+                      "InternalDetails.PrimaryKey[2][0]": "string",
+                      "PendingOp": "string",
+                      "Timestamp": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "CompactionPolicy\tCompactionPolicyProperties[0].Name\tCompactionPolicyProperties[0].Value\tCompactionPolicyProperties[1].Name\tCompactionPolicyProperties[1].Value\tDatasetId\tDatasetName\tDatasetType\tDatatypeDataverseName\tDatatypeName\tDataverseName\tGroupName\tHints\tHints[0].Name\tHints[0].Value\tInternalDetails.Autogenerated\tInternalDetails.FileStructure\tInternalDetails.PartitioningKey[0][0]\tInternalDetails.PartitioningKey[1][0]\tInternalDetails.PartitioningKey[2][0]\tInternalDetails.PartitioningStrategy\tInternalDetails.PrimaryKey[0][0]\tInternalDetails.PrimaryKey[1][0]\tInternalDetails.PrimaryKey[2][0]\tPendingOp\tTimestamp\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t13\tCompactionPolicy\tINTERNAL\tMetadata\tCompactionPolicyRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tCompactionPolicy\t\tHASH\tDataverseName\tCompactionPolicy\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t2\tDataset\tINTERNAL\tMetadata\tDatasetRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tDatasetName\t\tHASH\tDataverseName\tDatasetName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t8\tDatasourceAdapter\tINTERNAL\tMetadata\tDatasourceAdapterRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tName\t\tHASH\tDataverseName\tName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t3\tDatatype\tINTERNAL\tMetadata\tDatatypeRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tDatatypeName\t\tHASH\tDataverseName\tDatatypeName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t1\tDataverse\tINTERNAL\tMetadata\tDataverseRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\t\t\tHASH\tDataverseName\t\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t14\tExternalFile\tINTERNAL\tMetadata\tExternalFileRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tDatasetName\tFileNumber\tHASH\tDataverseName\tDatasetName\tFileNumber\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t10\tFeed\tINTERNAL\tMetadata\tFeedRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tFeedName\t\tHASH\tDataverseName\tFeedName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t11\tFeedConnection\tINTERNAL\tMetadata\tFeedConnectionRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tFeedName\tDatasetName\tHASH\tDataverseName\tFeedName\tDatasetName\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t12\tFeedPolicy\tINTERNAL\tMetadata\tFeedPolicyRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tPolicyName\t\tHASH\tDataverseName\tPolicyName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t7\tFunction\tINTERNAL\tMetadata\tFunctionRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tName\tArity\tHASH\tDataverseName\tName\tArity\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t4\tIndex\tINTERNAL\tMetadata\tIndexRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tDatasetName\tIndexName\tHASH\tDataverseName\tDatasetName\tIndexName\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t9\tLibrary\tINTERNAL\tMetadata\tLibraryRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tDataverseName\tName\t\tHASH\tDataverseName\tName\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t5\tNode\tINTERNAL\tMetadata\tNodeRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tNodeName\t\t\tHASH\tNodeName\t\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t6\tNodegroup\tINTERNAL\tMetadata\tNodeGroupRecordType\tMetadata\tMetadataGroup\t[]\t\t\tfalse\tBTREE\tGroupName\t\t\tHASH\tGroupName\t\t\t0\tMon Mar 26 14:42:07 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t116\tChirpMessages\tINTERNAL\tTinySocial\tChirpMessageType\tTinySocial\tTinySocial.ChirpMessages\t\tCARDINALITY\t100\tfalse\tBTREE\tchirpId\t\t\tHASH\tchirpId\t\t\t0\tMon Mar 26 16:12:25 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t115\tChirpUsers\tINTERNAL\tTinySocial\tChirpUserType\tTinySocial\tTinySocial.ChirpUsers\t[]\t\t\tfalse\tBTREE\tscreenName\t\t\tHASH\tscreenName\t\t\t0\tMon Mar 26 16:12:25 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t114\tGleambookMessages\tINTERNAL\tTinySocial\tGleambookMessageType\tTinySocial\tTinySocial.GleambookMessages\t[]\t\t\tfalse\tBTREE\tmessageId\t\t\tHASH\tmessageId\t\t\t0\tMon Mar 26 16:12:25 PDT 2018\nprefix\tmax-mergable-component-size\t1073741824\tmax-tolerance-component-count\t5\t113\tGleambookUsers\tINTERNAL\tTinySocial\tGleambookUserType\tTinySocial\tTinySocial.GleambookUsers_349e840a-19ef-4360-9738-5d41ca7f7589\t[]\t\t\tfalse\tBTREE\tid\t\t\tHASH\tid\t\t\t0\tMon Mar 26 16:12:25 PDT 2018\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100254087_-1656029820",
+      "id": "20180326-143734_1969193905",
+      "dateCreated": "2018-03-26 14:37:34.087",
+      "dateStarted": "2018-03-26 16:12:27.648",
+      "dateFinished": "2018-03-26 16:12:27.710",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Load data for the following queries",
+      "text": "%asterixdb\nUSE TinySocial;\n\nINSERT INTO ChirpUsers\n([\n    {\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":18,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\n    {\"screenName\":\"ColineGeyer@63\",\"lang\":\"en\",\"friendsCount\":121,\"statusesCount\":362,\"name\":\"Coline Geyer\",\"followersCount\":17159},\n    {\"screenName\":\"NilaMilliron_tw\",\"lang\":\"en\",\"friendsCount\":445,\"statusesCount\":164,\"name\":\"Nila Milliron\",\"followersCount\":22649},\n    {\"screenName\":\"ChangEwing_573\",\"lang\":\"en\",\"friendsCount\":182,\"statusesCount\":394,\"name\":\"Chang Ewing\",\"followersCount\":32136}\n]);\n\nINSERT INTO ChirpMessages\n([\n    {\"chirpId\":\"1\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"47.44,80.65\"),\"sendTime\":datetime(\"2008-04-26T10:10:00\"),\"referredTopics\":{{\"product-z\",\"customization\"}},\"messageText\":\" love product-z its customization is good:)\"},\n    {\"chirpId\":\"2\",\"user\":{\"screenName\":\"ColineGeyer@63\",\"lang\":\"en\",\"friendsCount\":121,\"statusesCount\":362,\"name\":\"Coline Geyer\",\"followersCount\":17159},\"senderLocation\":point(\"32.84,67.14\"),\"sendTime\":datetime(\"2010-05-13T10:10:00\"),\"referredTopics\":{{\"ccast\",\"shortcut-menu\"}},\"messageText\":\" like ccast its shortcut-menu is awesome:)\"},\n    {\"chirpId\":\"3\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"29.72,75.8\"),\"sendTime\":datetime(\"2006-11-04T10:10:00\"),\"referredTopics\":{{\"product-w\",\"speed\"}},\"messageText\":\" like product-w the speed is good:)\"},\n    {\"chirpId\":\"4\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"39.28,70.48\"),\"sendTime\":datetime(\"2011-12-26T10:10:00\"),\"referredTopics\":{{\"product-b\",\"voice-command\"}},\"messageText\":\" like product-b the voice-command is mind-blowing:)\"},\n    {\"chirpId\":\"5\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"40.09,92.69\"),\"sendTime\":datetime(\"2006-08-04T10:10:00\"),\"referredTopics\":{{\"product-w\",\"speed\"}},\"messageText\":\" can\u0027t stand product-w its speed is terrible:(\"},\n    {\"chirpId\":\"6\",\"user\":{\"screenName\":\"ColineGeyer@63\",\"lang\":\"en\",\"friendsCount\":121,\"statusesCount\":362,\"name\":\"Coline Geyer\",\"followersCount\":17159},\"senderLocation\":point(\"47.51,83.99\"),\"sendTime\":datetime(\"2010-05-07T10:10:00\"),\"referredTopics\":{{\"x-phone\",\"voice-clarity\"}},\"messageText\":\" like x-phone the voice-clarity is good:)\"},\n    {\"chirpId\":\"7\",\"user\":{\"screenName\":\"ChangEwing_573\",\"lang\":\"en\",\"friendsCount\":182,\"statusesCount\":394,\"name\":\"Chang Ewing\",\"followersCount\":32136},\"senderLocation\":point(\"36.21,72.6\"),\"sendTime\":datetime(\"2011-08-25T10:10:00\"),\"referredTopics\":{{\"product-y\",\"platform\"}},\"messageText\":\" like product-y the platform is good\"},\n    {\"chirpId\":\"8\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"46.05,93.34\"),\"sendTime\":datetime(\"2005-10-14T10:10:00\"),\"referredTopics\":{{\"product-z\",\"shortcut-menu\"}},\"messageText\":\" like product-z the shortcut-menu is awesome:)\"},\n    {\"chirpId\":\"9\",\"user\":{\"screenName\":\"NathanGiesen@211\",\"lang\":\"en\",\"friendsCount\":39339,\"statusesCount\":473,\"name\":\"Nathan Giesen\",\"followersCount\":49416},\"senderLocation\":point(\"36.86,74.62\"),\"sendTime\":datetime(\"2012-07-21T10:10:00\"),\"referredTopics\":{{\"ccast\",\"voicemail-service\"}},\"messageText\":\" love ccast its voicemail-service is awesome\"},\n    {\"chirpId\":\"10\",\"user\":{\"screenName\":\"ColineGeyer@63\",\"lang\":\"en\",\"friendsCount\":121,\"statusesCount\":362,\"name\":\"Coline Geyer\",\"followersCount\":17159},\"senderLocation\":point(\"29.15,76.53\"),\"sendTime\":datetime(\"2008-01-26T10:10:00\"),\"referredTopics\":{{\"ccast\",\"voice-clarity\"}},\"messageText\":\" hate ccast its voice-clarity is OMG:(\"},\n    {\"chirpId\":\"11\",\"user\":{\"screenName\":\"NilaMilliron_tw\",\"lang\":\"en\",\"friendsCount\":445,\"statusesCount\":164,\"name\":\"Nila Milliron\",\"followersCount\":22649},\"senderLocation\":point(\"37.59,68.42\"),\"sendTime\":datetime(\"2008-03-09T10:10:00\"),\"referredTopics\":{{\"x-phone\",\"platform\"}},\"messageText\":\" can\u0027t stand x-phone its platform is terrible\"},\n    {\"chirpId\":\"12\",\"user\":{\"screenName\":\"OliJackson_512\",\"lang\":\"en\",\"friendsCount\":445,\"statusesCount\":164,\"name\":\"Oli Jackson\",\"followersCount\":22649},\"senderLocation\":point(\"24.82,94.63\"),\"sendTime\":datetime(\"2010-02-13T10:10:00\"),\"referredTopics\":{{\"product-y\",\"voice-command\"}},\"messageText\":\" like product-y the voice-command is amazing:)\"}\n]);\n\nINSERT INTO GleambookUsers\n([\n    {\"id\":1,\"alias\":\"Margarita\",\"name\":\"MargaritaStoddard\",\"nickname\":\"Mags\",\"userSince\":datetime(\"2012-08-20T10:10:00\"),\"friendIds\":{{2,3,6,10}},\"employment\":[{\"organizationName\":\"Codetechno\",\"startDate\":date(\"2006-08-06\")},{\"organizationName\":\"geomedia\",\"startDate\":date(\"2010-06-17\"),\"endDate\":date(\"2010-01-26\")}],\"gender\":\"F\"},\n    {\"id\":2,\"alias\":\"Isbel\",\"name\":\"IsbelDull\",\"nickname\":\"Izzy\",\"userSince\":datetime(\"2011-01-22T10:10:00\"),\"friendIds\":{{1,4}},\"employment\":[{\"organizationName\":\"Hexviafind\",\"startDate\":date(\"2010-04-27\")}]},\n    {\"id\":3,\"alias\":\"Emory\",\"name\":\"EmoryUnk\",\"userSince\":datetime(\"2012-07-10T10:10:00\"),\"friendIds\":{{1,5,8,9}},\"employment\":[{\"organizationName\":\"geomedia\",\"startDate\":date(\"2010-06-17\"),\"endDate\":date(\"2010-01-26\")}]},\n    {\"id\":4,\"alias\":\"Nicholas\",\"name\":\"NicholasStroh\",\"userSince\":datetime(\"2010-12-27T10:10:00\"),\"friendIds\":{{2}},\"employment\":[{\"organizationName\":\"Zamcorporation\",\"startDate\":date(\"2010-06-08\")}]},\n    {\"id\":5,\"alias\":\"Von\",\"name\":\"VonKemble\",\"userSince\":datetime(\"2010-01-05T10:10:00\"),\"friendIds\":{{3,6,10}},\"employment\":[{\"organizationName\":\"Kongreen\",\"startDate\":date(\"2010-11-27\")}]},\n    {\"id\":6,\"alias\":\"Willis\",\"name\":\"WillisWynne\",\"userSince\":datetime(\"2005-01-17T10:10:00\"),\"friendIds\":{{1,3,7}},\"employment\":[{\"organizationName\":\"jaydax\",\"startDate\":date(\"2009-05-15\")}]},\n    {\"id\":7,\"alias\":\"Suzanna\",\"name\":\"SuzannaTillson\",\"userSince\":datetime(\"2012-08-07T10:10:00\"),\"friendIds\":{{6}},\"employment\":[{\"organizationName\":\"Labzatron\",\"startDate\":date(\"2011-04-19\")}]},\n    {\"id\":8,\"alias\":\"Nila\",\"name\":\"NilaMilliron\",\"userSince\":datetime(\"2008-01-01T10:10:00\"),\"friendIds\":{{3}},\"employment\":[{\"organizationName\":\"Plexlane\",\"startDate\":date(\"2010-02-28\")}]},\n    {\"id\":9,\"alias\":\"Woodrow\",\"name\":\"WoodrowNehling\",\"nickname\":\"Woody\",\"userSince\":datetime(\"2005-09-20T10:10:00\"),\"friendIds\":{{3,10}},\"employment\":[{\"organizationName\":\"Zuncan\",\"startDate\":date(\"2003-04-22\"),\"endDate\":date(\"2009-12-13\")}]},\n    {\"id\":10,\"alias\":\"Bram\",\"name\":\"BramHatch\",\"userSince\":datetime(\"2010-10-16T10:10:00\"),\"friendIds\":{{1,5,9}},\"employment\":[{\"organizationName\":\"physcane\",\"startDate\":date(\"2007-06-05\"),\"endDate\":date(\"2011-11-05\")}]}\n]);\n\nINSERT INTO GleambookMessages\n([\n    {\"messageId\":1,\"authorId\":3,\"inResponseTo\":2,\"senderLocation\":point(\"47.16,77.75\"),\"message\":\" love product-b its shortcut-menu is awesome:)\"},\n    {\"messageId\":2,\"authorId\":1,\"inResponseTo\":4,\"senderLocation\":point(\"41.66,80.87\"),\"message\":\" dislike x-phone its touch-screen is horrible\"},\n    {\"messageId\":3,\"authorId\":2,\"inResponseTo\":4,\"senderLocation\":point(\"48.09,81.01\"),\"message\":\" like product-y the plan is amazing\"},\n    {\"messageId\":4,\"authorId\":1,\"inResponseTo\":2,\"senderLocation\":point(\"37.73,97.04\"),\"message\":\" can\u0027t stand acast the network is horrible:(\"},\n    {\"messageId\":5,\"authorId\":6,\"inResponseTo\":2,\"senderLocation\":point(\"34.7,90.76\"),\"message\":\" love product-b the customization is mind-blowing\"},\n    {\"messageId\":6,\"authorId\":2,\"inResponseTo\":1,\"senderLocation\":point(\"31.5,75.56\"),\"message\":\" like product-z its platform is mind-blowing\"},\n    {\"messageId\":7,\"authorId\":5,\"inResponseTo\":15,\"senderLocation\":point(\"32.91,85.05\"),\"message\":\" dislike product-b the speed is horrible\"},\n    {\"messageId\":8,\"authorId\":1,\"inResponseTo\":11,\"senderLocation\":point(\"40.33,80.87\"),\"message\":\" like ccast the 3G is awesome:)\"},\n    {\"messageId\":9,\"authorId\":3,\"inResponseTo\":12,\"senderLocation\":point(\"34.45,96.48\"),\"message\":\" love ccast its wireless is good\"},\n    {\"messageId\":10,\"authorId\":1,\"inResponseTo\":12,\"senderLocation\":point(\"42.5,70.01\"),\"message\":\" can\u0027t stand product-w the touch-screen is terrible\"},\n    {\"messageId\":11,\"authorId\":1,\"inResponseTo\":1,\"senderLocation\":point(\"38.97,77.49\"),\"message\":\" can\u0027t stand acast its plan is terrible\"},\n    {\"messageId\":12,\"authorId\":10,\"inResponseTo\":6,\"senderLocation\":point(\"42.26,77.76\"),\"message\":\" can\u0027t stand product-z its voicemail-service is OMG:(\"},\n    {\"messageId\":13,\"authorId\":10,\"inResponseTo\":4,\"senderLocation\":point(\"42.77,78.92\"),\"message\":\" dislike x-phone the voice-command is bad:(\"},\n    {\"messageId\":14,\"authorId\":9,\"inResponseTo\":12,\"senderLocation\":point(\"41.33,85.28\"),\"message\":\" love acast its 3G is good:)\"},\n    {\"messageId\":15,\"authorId\":7,\"inResponseTo\":11,\"senderLocation\":point(\"44.47,67.11\"),\"message\":\" like x-phone the voicemail-service is awesome\"}\n]);",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:30.195",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "success"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100324179_741758081",
+      "id": "20180326-143844_1648269488",
+      "dateCreated": "2018-03-26 14:38:44.179",
+      "dateStarted": "2018-03-26 16:12:30.219",
+      "dateFinished": "2018-03-26 16:12:30.401",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Exact Match",
+      "text": "%asterixdb\nUSE TinySocial;\n\nSELECT VALUE user\nFROM GleambookUsers user\nWHERE user.id \u003d 8;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:32.505",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cscript src\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.js\"\u003e\u003c/script\u003e\n\u003clink href\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.css\" type\u003d\"text/css\" rel\u003d\"stylesheet\" /\u003e\n\u003cscript\u003e$(\u0027#json-renderer20180326-144739_1862211696\u0027).jsonViewer([{\"id\":8,\"alias\":\"Nila\",\"name\":\"NilaMilliron\",\"userSince\":\"2008-01-01T10:10:00.000Z\",\"friendIds\":[3],\"employment\":[{\"organizationName\":\"Plexlane\",\"startDate\":\"2010-02-28\"}]}]);\u003c/script\u003e\u003c/head\u003e\u003cbody\u003e\u003cpre id\u003d\"json-renderer20180326-144739_1862211696\"\u003e\u003c/pre\u003e\u003c/body\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100859734_-26288880",
+      "id": "20180326-144739_1862211696",
+      "dateCreated": "2018-03-26 14:47:39.734",
+      "dateStarted": "2018-03-26 16:12:32.531",
+      "dateFinished": "2018-03-26 16:12:32.557",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Range Scan",
+      "text": "%asterixdb\nUSE TinySocial;\n\nSELECT VALUE user\nFROM GleambookUsers user\nWHERE user.id \u003e\u003d 2 AND user.id \u003c\u003d 4;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:34.336",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cscript src\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.js\"\u003e\u003c/script\u003e\n\u003clink href\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.css\" type\u003d\"text/css\" rel\u003d\"stylesheet\" /\u003e\n\u003cscript\u003e$(\u0027#json-renderer20180326-144802_229500938\u0027).jsonViewer([{\"id\":2,\"alias\":\"Isbel\",\"name\":\"IsbelDull\",\"userSince\":\"2011-01-22T10:10:00.000Z\",\"friendIds\":[1,4],\"employment\":[{\"organizationName\":\"Hexviafind\",\"startDate\":\"2010-04-27\"}],\"nickname\":\"Izzy\"},{\"id\":3,\"alias\":\"Emory\",\"name\":\"EmoryUnk\",\"userSince\":\"2012-07-10T10:10:00.000Z\",\"friendIds\":[1,5,8,9],\"employment\":[{\"organizationName\":\"geomedia\",\"startDate\":\"2010-06-17\",\"endDate\":\"2010-01-26\"}]},{\"id\":4,\"alias\":\"Nicholas\",\"name\":\"NicholasStroh\",\"userSince\":\"2010-12-27T10:10:00.000Z\",\"friendIds\":[2],\"employment\":[{\"organizationName\":\"Zamcorporation\",\"startDate\":\"2010-06-08\"}]}]);\u003c/script\u003e\u003c/head\u003e\u003cbody\u003e\u003cpre id\u003d\"json-renderer20180326-144802_229500938\"\u003e\u003c/pre\u003e\u003c/body\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100882363_-1965355619",
+      "id": "20180326-144802_229500938",
+      "dateCreated": "2018-03-26 14:48:02.364",
+      "dateStarted": "2018-03-26 16:12:34.353",
+      "dateFinished": "2018-03-26 16:12:34.379",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "EquiJoin (shown in flat format)",
+      "text": "%asterixdb\n+flat\nUSE TinySocial;\n\nSELECT user.name AS uname, msg.message AS message\nFROM GleambookUsers user, GleambookMessages msg\nWHERE msg.authorId \u003d user.id;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:36.217",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "message": "string",
+                      "uname": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "message",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "uname",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "message\tuname\n dislike x-phone its touch-screen is horrible\tMargaritaStoddard\n can\u0027t stand acast the network is horrible:(\tMargaritaStoddard\n like ccast the 3G is awesome:)\tMargaritaStoddard\n can\u0027t stand product-w the touch-screen is terrible\tMargaritaStoddard\n can\u0027t stand acast its plan is terrible\tMargaritaStoddard\n like product-y the plan is amazing\tIsbelDull\n like product-z its platform is mind-blowing\tIsbelDull\n love product-b its shortcut-menu is awesome:)\tEmoryUnk\n love ccast its wireless is good\tEmoryUnk\n dislike product-b the speed is horrible\tVonKemble\n love product-b the customization is mind-blowing\tWillisWynne\n like x-phone the voicemail-service is awesome\tSuzannaTillson\n love acast its 3G is good:)\tWoodrowNehling\n can\u0027t stand product-z its voicemail-service is OMG:(\tBramHatch\n dislike x-phone the voice-command is bad:(\tBramHatch\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100935960_-420490470",
+      "id": "20180326-144855_1610227726",
+      "dateCreated": "2018-03-26 14:48:55.960",
+      "dateStarted": "2018-03-26 16:12:36.237",
+      "dateFinished": "2018-03-26 16:12:36.274",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Show the optimized query plan",
+      "text": "%asterixdb\n-- let\u0027s see the optimized plan for a query\nUSE TinySocial;\n\nEXPLAIN\nSELECT user.name AS uname, msg.message AS message\nFROM GleambookUsers user, GleambookMessages msg\nWHERE msg.authorId \u003d user.id;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:38.090",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cscript src\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.js\"\u003e\u003c/script\u003e\n\u003clink href\u003d\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer/jquery.json-viewer.css\" type\u003d\"text/css\" rel\u003d\"stylesheet\" /\u003e\n\u003cscript\u003e$(\u0027#json-renderer20180326-144939_1856383147\u0027).jsonViewer([\"distribute result [$$25]\\n-- DISTRIBUTE_RESULT  |PARTITIONED|\\n  exchange\\n  -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n    project ([$$25])\\n    -- STREAM_PROJECT  |PARTITIONED|\\n      assign [$$25] \u003c- [{\\\"uname\\\": $$30, \\\"message\\\": $$31}]\\n      -- ASSIGN  |PARTITIONED|\\n        project ([$$30, $$31])\\n        -- STREAM_PROJECT  |PARTITIONED|\\n          exchange\\n          -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n            join (eq($$28, $$26))\\n            -- HYBRID_HASH_JOIN [$$26][$$28]  |PARTITIONED|\\n              exchange\\n              -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n                project ([$$30, $$26])\\n                -- STREAM_PROJECT  |PARTITIONED|\\n                  assign [$$30] \u003c- [$$user.getField(2)]\\n                  -- ASSIGN  |PARTITIONED|\\n                    exchange\\n                    -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n                      data-scan []\u003c-[$$26, $$user] \u003c- TinySocial.GleambookUsers\\n                      -- DATASOURCE_SCAN  |PARTITIONED|\\n                        exchange\\n                        -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n                          empty-tuple-source\\n                          -- EMPTY_TUPLE_SOURCE  |PARTITIONED|\\n              exchange\\n              -- HASH_PARTITION_EXCHANGE [$$28]  |PARTITIONED|\\n                project ([$$31, $$28])\\n                -- STREAM_PROJECT  |PARTITIONED|\\n                  assign [$$31, $$28] \u003c- [$$msg.getField(4), $$msg.getField(1)]\\n                  -- ASSIGN  |PARTITIONED|\\n                    project ([$$msg])\\n                    -- STREAM_PROJECT  |PARTITIONED|\\n                      exchange\\n                      -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n                        data-scan []\u003c-[$$27, $$msg] \u003c- TinySocial.GleambookMessages\\n                        -- DATASOURCE_SCAN  |PARTITIONED|\\n                          exchange\\n                          -- ONE_TO_ONE_EXCHANGE  |PARTITIONED|\\n                            empty-tuple-source\\n                            -- EMPTY_TUPLE_SOURCE  |PARTITIONED|\\n\"]);\u003c/script\u003e\u003c/head\u003e\u003cbody\u003e\u003cpre id\u003d\"json-renderer20180326-144939_1856383147\"\u003e\u003c/pre\u003e\u003c/body\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522100979495_1335939567",
+      "id": "20180326-144939_1856383147",
+      "dateCreated": "2018-03-26 14:49:39.495",
+      "dateStarted": "2018-03-26 16:12:38.109",
+      "dateFinished": "2018-03-26 16:12:38.128",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Visualizing aggregates",
+      "text": "%asterixdb\n+flat\nUSE TinySocial;\n\nSELECT uid AS user, COUNT(cm) AS count\nFROM ChirpMessages cm\nGROUP BY cm.user.screenName AS uid;",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-26 16:12:40.310",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "count": "string",
+                      "user": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "user",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count\tuser\n1\tChangEwing_573\n3\tColineGeyer@63\n6\tNathanGiesen@211\n1\tNilaMilliron_tw\n1\tOliJackson_512\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522101129713_-597290460",
+      "id": "20180326-145209_321879310",
+      "dateCreated": "2018-03-26 14:52:09.713",
+      "dateStarted": "2018-03-26 16:12:39.915",
+      "dateFinished": "2018-03-26 16:12:39.952",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1522101260315_830054118",
+      "id": "20180326-145420_432798168",
+      "dateCreated": "2018-03-26 14:54:20.315",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Zeppelin Tutorial/AsterixDB Tutorial",
+  "id": "2DBU1EJG9",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "asterixdb:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
