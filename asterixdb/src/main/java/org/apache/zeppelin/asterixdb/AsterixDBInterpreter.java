@@ -184,6 +184,10 @@ public class AsterixDBInterpreter extends Interpreter {
     final Set<String> keys = new TreeSet<>();
     final JsonArray tuples = ensureResultSize(resultArray);
 
+    if (tuples.size() == 0) {
+      return "";
+    }
+
     for (int i = 0; i < tuples.size(); i++) {
       final String json = tuples.get(i).toString();
       final Map<String, Object> flattenMap = JsonFlattener.flattenAsMap(json);
