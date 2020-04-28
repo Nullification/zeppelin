@@ -35,8 +35,8 @@ public class AsterixDBInterpreterTests {
   @BeforeClass
   public static void setup() {
     Properties properties = new Properties();
-    properties.setProperty(AsterixDBInterpreter.ASTERIXDB_HOST, HOST);
-    properties.setProperty(AsterixDBInterpreter.ASTERIXDB_PORT, PORT);
+    properties.setProperty(AsterixDBInterpreter.HOST, HOST);
+    properties.setProperty(AsterixDBInterpreter.PORT, PORT);
     interpreter = new AsterixDBInterpreter(properties);
     interpreter.open();
   }

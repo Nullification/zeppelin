@@ -29,7 +29,8 @@ public class ResultObject {
   private JsonElement results;
   private String status;
   private Metrics metrics;
-  private List<AsterixDBError> errors;
+  private List<Message> errors;
+  private List<Message> warnings;
   private Plans plans;
 
   public String getRequestID() {
@@ -72,12 +73,20 @@ public class ResultObject {
     this.metrics = metrics;
   }
 
-  public List<AsterixDBError> getErrors() {
+  public List<Message> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<AsterixDBError> errors) {
+  public void setErrors(List<Message> errors) {
     this.errors = errors;
+  }
+
+  public List<Message> getWarnings() {
+    return warnings;
+  }
+
+  public void setWarnings(List<Message> warnings) {
+    this.warnings = warnings;
   }
 
   public Plans getPlans() {

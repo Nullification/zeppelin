@@ -21,12 +21,24 @@ import org.junit.Test;
 
 public class HttpAPIClientTest {
 
-  private final HttpAPIClient apiClient = new HttpAPIClient("localhost", "19002", null);
+  private final HttpAPIClient apiClient;
+
+  public HttpAPIClientTest() {
+    apiClient = new HttpAPIClient("192.168.0.100", "19002", null, 10);
+  }
 
   @Test
   public void testExecuteQuery() {
     final String clientContextId = "test1";
     final ResultObject resultObject = apiClient.executeQuery("SELECT 1+1;", clientContextId,
+            true);
+    assert ("success".equals(resultObject.getStatus()));
+  }
+
+  @Test
+  public void testWarningQuery() {
+    final String clientContextId = "test1";
+    final ResultObject resultObject = apiClient.executeQuery("SELECT 1 < \"str\";", clientContextId,
             true);
     assert ("success".equals(resultObject.getStatus()));
   }

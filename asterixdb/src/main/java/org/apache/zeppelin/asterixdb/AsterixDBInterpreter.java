@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
-import org.apache.zeppelin.asterixdb.result.AsterixDBError;
+import org.apache.zeppelin.asterixdb.result.Message;
 import org.apache.zeppelin.asterixdb.result.ResultObject;
 import org.apache.zeppelin.interpreter.Interpreter;
 import org.apache.zeppelin.interpreter.InterpreterContext;
@@ -49,12 +49,16 @@ public class AsterixDBInterpreter extends Interpreter {
       + "<link href=\"http://rawgit.com/abodelot/jquery.json-viewer/master/json-viewer"
       + "/jquery.json-viewer.css\" "
       + "type=\"text/css\" rel=\"stylesheet\" />\n";
-  public static final String ASTERIXDB_HOST = "asterixdb.host";
-  public static final String ASTERIXDB_PORT = "asterixdb.port";
-  private static final String ASTERIXDB_RESULT_SIZE = "asterixdb.result.size";
-  private static final String ASTERIXDB_PLAN_FORMAT = "astreixdb.plan.format";
-  private static final int ASTERIXDB_DEFAULT_RESULT_SIZE = 1000;
-  private static final String ASTERIXDB_DEFAULT_PLAN_FORMAT = "STRING";
+  public static final String HOST = "asterixdb.host";
+  public static final String PORT = "asterixdb.port";
+  private static final String RESULT_SIZE = "asterixdb.result.size";
+  private static final String PLAN_FORMAT = "asterixdb.plan.format";
+  private static final String WARNING_COUNT = "asterixdb.warning.count";
+
+  // Default configs
+  private static final String DEFAULT_RESULT_SIZE = "1000";
+  private static final String DEFAULT_PLAN_FORMAT = "STRING";
+  private static final String DEFAULT_WARNING_COUNT = "10";
   private static final Logger LOGGER = LoggerFactory.getLogger(AsterixDBInterpreter.class);
   private final HttpAPIClient api;
   private final int resultSize;
@@ -62,14 +66,14 @@ public class AsterixDBInterpreter extends Interpreter {
   public AsterixDBInterpreter(Properties property) {
     super(property);
 
-    final String host = getProperty(ASTERIXDB_HOST);
-    final String port = getProperty(ASTERIXDB_PORT);
-    final String resultSizeString = getProperty(ASTERIXDB_RESULT_SIZE);
-    final String planFormat = getProperty(ASTERIXDB_PLAN_FORMAT) == null ?
-            ASTERIXDB_DEFAULT_PLAN_FORMAT : getProperty(ASTERIXDB_PLAN_FORMAT);
-    api = new HttpAPIClient(host, port, planFormat);
-    resultSize = resultSizeString == null ?
-        ASTERIXDB_DEFAULT_RESULT_SIZE : Integer.parseInt(resultSizeString);
+    final String host = getProperty(HOST);
+    final String port = getProperty(PORT);
+    final String resultSizeString = getProperty(RESULT_SIZE, DEFAULT_RESULT_SIZE);
+    final String planFormat = getProperty(PLAN_FORMAT, DEFAULT_PLAN_FORMAT);
+    final String warningCountString = getProperty(WARNING_COUNT, DEFAULT_WARNING_COUNT);
+    final int warningCount = Integer.parseInt(warningCountString);
+    api = new HttpAPIClient(host, port, planFormat, warningCount);
+    resultSize = Integer.parseInt(resultSizeString);
     LOGGER.info("AsterixDB Interpreter initiated");
   }
 
@@ -140,9 +144,20 @@ public class AsterixDBInterpreter extends Interpreter {
     }
 
     if (resultType == Type.HTML) {
-      resultString.append("\n" + "Execution Time: " +
+      final List<Message> warnings = resultObject.getWarnings();
+      if (warnings != null && !warnings.isEmpty()) {
+        resultString.append("Warnings: <br>");
+        for (Message m : warnings) {
+          resultString.append(m.getMsg());
+          resultString.append("<br>");
+        }
+      }
+      resultString.append("<br>");
+      resultString.append("Execution Time: " +
               resultObject.getMetrics().getExecutionTime());
     }
+
+
 
     return new InterpreterResult(InterpreterResult.Code.SUCCESS, resultType,
             resultString.toString());
@@ -216,9 +231,9 @@ public class AsterixDBInterpreter extends Interpreter {
     return buffer.toString();
   }
 
-  private String getErrors(final List<AsterixDBError> errors) {
+  private String getErrors(final List<Message> errors) {
     final StringBuilder stringBuilder = new StringBuilder();
-    for (final AsterixDBError e : errors) {
+    for (final Message e : errors) {
       stringBuilder.append("Error " + e.getMsg() + "\n");
     }
     return stringBuilder.toString();

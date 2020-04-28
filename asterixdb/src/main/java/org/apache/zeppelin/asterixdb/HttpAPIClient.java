@@ -46,10 +46,12 @@ public class HttpAPIClient {
   private final String uri;
   private final String planFormat;
   private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+  private final int warningCount;
 
-  public HttpAPIClient(final String host, final String port, String planFormat) {
+  public HttpAPIClient(final String host, final String port, String planFormat, int warningCount) {
     uri = "http://" + host + ":" + port;
     this.planFormat = planFormat == null ? "STRING" : planFormat;
+    this.warningCount = warningCount;
   }
 
   public ResultObject executeQuery(String query, String clientContextId, boolean plan) {
@@ -61,6 +63,7 @@ public class HttpAPIClient {
     jsonRequest.add("client_context_id", new JsonPrimitive(clientContextId));
     jsonRequest.add("plan-format", new JsonPrimitive(planFormat));
     jsonRequest.add("optimized-logical-plan", new JsonPrimitive(plan));
+    jsonRequest.add("max-warnings", new JsonPrimitive(warningCount));
     try {
       apiHttpPost.setEntity(new StringEntity(jsonRequest.toString(), ContentType.APPLICATION_JSON));
       InputStream inputStream = httpclient.execute(apiHttpPost).getEntity().getContent();

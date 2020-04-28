@@ -19,7 +19,7 @@ package org.apache.zeppelin.asterixdb.result;
 /**
  * Error field for the result metadata
  */
-public class AsterixDBError {
+public class Message {
 
   private int code;
   private String msg;
